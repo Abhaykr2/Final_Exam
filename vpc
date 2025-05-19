@@ -1,0 +1,29 @@
+Virtual Private Cloud
+1.search vpc on aws -> your vpc -> create vpc -> click vpc and more -> Auto generate(iacsd) -> IPV4 CIDR Block (192.167.100.0/24) -> IPV6 (No) -> Tenancy(default) ->
+No of available (1) -> custamize subnet (as it is) -> No of public subnet(1) -> Private subnet(1) -> Custamize subnet CIDR block public 192.168.100.20/25   private 192.168.100.128/25
+NAT gateways(1AZ) ->-> VPC endponts (None) -> DNS (as it is) -> Now create vpc
+2. No go to ec2 launch instance -> Name (Public) -> debain -> Create key pair -> Name (public) -> .ppk -> CVtreate key pair -> Network setting -> edit -> VPC requrid -> (iacsd-vpc)
+   ayuto assign public ip (enable) ->ssh -> Add security->ATTP -> source type any where then launch machine then connect to to putty with public ip
+	sudo apt update
+	sudo apt install apache2
+	sudo rm /var/www/html/index.html
+	sudo nano /var/www/html/index.html
+	which curl
+	curl http://192.168.100.116
+3. Now create new instance name(private) -> Debian -> Keypair create -> private -> pem -> create -> downlode -> vpc required -> (iacsd-vpc) -> subnet (iacsd-private) -> type(HTTP)
+	Now launch instance -> Copy private key
+4. Now go to putty of public vpc 
+	ls
+	copy private key generate key
+	nano mykey (Paste private key)
+	chmod 400 mykey
+	ssh -i mykey admin@192.168.100198(ip of private ec2)
+	sudo apt update
+	sudo apt install apache2
+	sudo nano /var/www/html/index.html
+	curl http:// 192.168.100.116(ip of public vpc) 
+
+
+
+
+
