@@ -1,0 +1,22 @@
+1.ssh-keygen
+==================================================================================
+1.first yo go to cmd then type ssh-keygen -t rsa
+2.Copy public key and then go to Debian machine type mkdir .ssh -> cs .ssh -> nano authorized_keys -> paste here public key then save it
+3.Now go to cmd if you want to connect debain to cmd then type ssh star@192.168.56.108
+4.Now if you want connect putty passwdless then first go to puttygen and generate ppk key load -. click browser -> copy private key(id_rsa) of main machine then click generate private key and save it
+5.Now go to putty Auth -> cred -> paste here puttygen key and save itand go to 
+session -> star@192.168.56.100 
+===================================================================================
+2.Git_configartion
+1.first login GitHub -> create a new repo -> then go to Debian ->cd .ssh -> ls -> cat id_rsa.pub and copy it -> then go to GitHub 
+-> setting -> deploye key-> Past here key
+2. Now go to the debain machine create folder mkdir project -> cd project -> nano index.html -> write something and save it
+3. git init
+4. git status
+5. git add .
+6. git config user.email "abhayrathg@gmail.com"
+7. git config user.name "abhay"
+   git commit -m "This is somthing"
+8. git remote add origin"ssh key  link paste hare"
+9. git push origin master now go to git hub and checkit git is configure or not
+====================================================================================
