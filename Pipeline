@@ -1,3 +1,15 @@
+1.first login GitHub -> create a new repo -> then go to Debian ->cd .ssh -> ls -> cat id_rsa.pub and copy it -> then go to GitHub 
+-> setting -> deploye key-> Past here key
+2. Now go to the debain machine create folder mkdir project -> cd project -> nano index.html -> write something and save it
+3. git init
+4. git status
+5. git add .
+6. git config user.email "abhayrathg@gmail.com"
+7. git config user.name "abhay"
+   git commit -m "This is somthing"
+8. git remote add origin"ssh key  link paste hare"
+9. git push origin master now go to git hub and checkit git is configure or not
+
 3. Jenkins run on aws console
  	after git configartion launch one Debian machine 
 	now got aws-> launch instenace name(Jenkins_Server) -> create key pair(.ppk) -> edit -> Add security -> TCP -> Port range (8080)
@@ -23,14 +35,71 @@ systemctl is-active jenkins
 	admin -> admin@123 -> username(Abhay) -> login -> create new item -> copy https path of github -> patse on github url both palce of GitHub in Jenkins 
 	-> click build steps -> Execute shell -> whoami pwd  ls -l
 		then save it
-6. go to GitHub -> setting -> webhook-> add new webhook-> copy Jenkins web ip with port number and past in GitHub webhook with writ -- /github-webhook/-->add webhook
+6. go to GitHub -> setting -> webhook-> add new webhook-> copy Jenkins web ip with port number and past in GitHub webhook with write --webipwith port number /github-webhook/-->add webhook
 7.now in git hub machine such as local machine where git is configure
-	go hter and run command git add.
-	
+	go ther and run command 
+ 	cd dhadkan
+  	nano index.html
 	git add .
 	git commit -m "First commit"
 	git push origin master
 8. Now go to webhook in git hub check it  and also go to Jenkins and check it 
+9. now go to jenkins check it in console output
+10. in jenkins debain machine checkit  workspace is available or not by command ls
+	cd workspace
+ 	ls
+  	cd d2
+   	docker images
+    	which docker
+     	systemctl status docker
+      	exit
+      	systemctl restart jenkins
+       	
+11. Now go to jenkins in project -> configure -> In command write it
+      	echo "Let's Build Docker Image"
+       sleep 30
+       docker build -t (tag of docker) .
+       docker run --name mycontainer -d -p 80:80 (tag of docker)
+       echo "Build successfull"
+       then go to ec2 instance where jenkins and docker run and got to security -> edit inbound rules -> add http
+       then save it of jenkins portal
+12. Now go to jenkins debian machine
+	cd /workspace/d2/
+ 	docker images
+13. Now go to local machine 
+	cd project
+	nano index.html
+ 	git add .
+  	git commit -m "Abhay"
+   	git push origin master
+    now check in git hub -> then check in webhook check here build is happend or not -> now go to 
+    jenkins check it build is happend or not
+    now go to jenkins machine check it 
+    	su jenkins
+     	docker ps
+ 	now go to web and type public ip of jenkins machine with port 80
+....both jenkins and dovcker run in same machine
+14. now in jenkins machine
+	docker login or docker loging -u username -p "PASSWORD"
+ 	docker images
+  	docker push imagename
+   	now go to docker hub check it push image is available or not
+    
+ 
+ 	
+  
+ 	
+  	
+  	
+ 	
+	
+       
+
+      
+    	
+   	
+  	 
+
 ========================================================================================================================================================================
 4.Docker --> configure docker in local machine
 1. sudo apt install docker.io
